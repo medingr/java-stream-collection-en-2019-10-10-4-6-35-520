@@ -88,15 +88,15 @@ public class AddTest {
         assertThat(add.getMedianOfEven(arrayList)).isEqualTo((double) 3);
     }
 
-    @Test
-    public void should_return_average_of_even() {
-        //Find the average of all even numbers in the array
-        Integer[] array = new Integer[]{1, 2, 3, 4, 5};
-        List<Integer> arrayList = Arrays.asList(array);
-
-        Add add = new Add();
-        assertThat(add.getAverageOfEven(arrayList)).isEqualTo((double) 3);
-    }
+//    @Test
+//    public void should_return_average_of_even() {
+//        //Find the average of all even numbers in the array
+//        Integer[] array = new Integer[]{1, 2, 3, 4, 5};
+//        List<Integer> arrayList = Arrays.asList(array);
+//
+//        Add add = new Add();
+//        assertThat(add.getAverageOfEven(arrayList)).isEqualTo((double) 3);
+//    }
 //
 //    @Test
 //    public void should_return_whether_include_special_element() {

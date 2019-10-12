@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.stream.Collector;
@@ -58,14 +59,13 @@ public class Add {
         throw new NotImplementedException();
     }
 
-    public double getAverageOfEven(List<Integer> arrayList) {
-//        return arrayList.stream()
-//                .filter( num -> num %2 == 0)
-//                .collect(Collectors.toList());
-//
-//        })
-        throw new NotImplementedException();
-    }
+//    public double getAverageOfEven(List<Integer> arrayList) {
+//        List<Integer> common = new ArrayList<>();
+//        double average = arrayList.stream()
+//                .filter( n -> n % 2 == 0)
+//                .forEach( add -> add == n);
+//        return average;
+//    }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
         throw new NotImplementedException();
