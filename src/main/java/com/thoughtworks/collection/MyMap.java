@@ -2,8 +2,9 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class MyMap {
 
@@ -17,22 +18,44 @@ public class MyMap {
     }
 
     public List<Integer> getTriple() {
-        throw new NotImplementedException();
+        return array.stream().map( num ->
+                num * 3 ).collect(Collectors.toList());
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+       return array.stream().map( num ->
+               getLettersFromNum(num)).collect(Collectors.toList());
     }
+//
+//    private static String getLetterFromNum(int i) {
+//        return i < 0 || i > 26 ? "?" : String.valueOf((char) ('A' + i -1 )).toLowerCase();
+//    }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+          return array.stream().map( num ->
+                  getLettersFromNum(num)).collect(Collectors.toList());
+    }
+
+    private static  String getLettersFromNum(int colNum) {
+        int Base = 26;
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String colName = "";
+
+        while (colNum > 0) {
+            int position = colNum % Base;
+            colName = (position == 0 ? 'Z' : chars.charAt(position > 0 ? position - 1 : 0)) + colName;
+            colNum = (colNum - 1) / Base;
+        }
+        return colName.toLowerCase();
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        return array.stream().sorted(Comparator.reverseOrder()).
+                collect(Collectors.toList());
     }
 
     public List<Integer> sortFromSmall() {
-        throw new NotImplementedException();
+        return array.stream().sorted().
+                collect(Collectors.toList());
     }
 }
